@@ -21,10 +21,20 @@
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Outfit, Arial, Helvetica, sans-serif !important;
+
 }
 
 .ant-select-selector {

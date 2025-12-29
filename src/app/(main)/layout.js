@@ -22,7 +22,7 @@ export const metadata = {
 
 export default function Layout({ children }) {
     return (
-        <div>
+        <div className="min-h-screen w-full bg-cover bg-center object-cover bg-[url('/Images/Home/pages_bg.png')]">
             <Header />
             {children}
             <Footer />
