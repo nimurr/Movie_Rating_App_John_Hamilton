@@ -50,7 +50,7 @@ const PopularMoviesSection = () => {
             >
                 {movies.map((movie) => (
                     <SwiperSlide key={movie.id}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 bg-[#1a3248] rounded-xl p-8 md:px-20 py-10">
+                        <div className="grid  grid-cols-1 md:grid-cols-2 items-center gap-10 bg-[#1a3248] rounded-xl p-8 md:px-20 py-10">
 
                             {/* Left Content */}
                             <div className="text-white">
@@ -96,7 +96,7 @@ const PopularMoviesSection = () => {
                             </div>
 
                             {/* Right Image */}
-                            <div className="flex justify-center md:justify-end">
+                            <div className="flex cursor-pointer justify-center md:justify-end">
                                 <img
                                     src={movie.image}
                                     alt={movie.title}
