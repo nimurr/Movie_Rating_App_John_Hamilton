@@ -13,7 +13,7 @@ export default function Header() {
 
     return (
         <header className="fixed top-0 left-0 w-full z-50 bg-[#0b1220]/90 md:bg-transparent backdrop-blur-sm  md:backdrop-blur-none text-white">
-            <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-0 py-4">
+            <div className=" flex items-center justify-between max-w-7xl mx-auto px-4 md:px-0 py-4">
                 {/* Logo */}
                 <div className="text-2xl font-extrabold tracking-wide">
                     <img src="/Images/Auth/logo.png" alt="Logo" className="h-8 w-auto" />

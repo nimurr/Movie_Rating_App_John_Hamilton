@@ -42,3 +42,25 @@ body {
   box-shadow: none !important;
   background: transparent !important;
 }
+
+
+.scoop-btn {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 12px;
+
+}
+
+.scoop {
+  corner-shape: scoop;
+}
+
+.scoop-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scoop-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
