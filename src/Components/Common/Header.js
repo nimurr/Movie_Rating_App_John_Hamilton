@@ -1,4 +1,5 @@
 'use client';
+import Link from "next/link";
 import React, { useState, useRef } from "react";
 import { IoSearch, IoMenu, IoClose } from "react-icons/io5";
 
@@ -15,9 +16,9 @@ export default function Header() {
         <header className="fixed top-0 left-0 w-full z-50 bg-[#0b1220]/90 md:bg-transparent backdrop-blur-sm  md:backdrop-blur-none text-white">
             <div className=" flex items-center justify-between max-w-7xl mx-auto px-4 md:px-0 py-4">
                 {/* Logo */}
-                <div className="text-2xl font-extrabold tracking-wide">
+                <Link href="/" className="text-2xl font-extrabold tracking-wide">
                     <img src="/Images/Auth/logo.png" alt="Logo" className="h-8 w-auto" />
-                </div>
+                </Link>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden lg:flex items-center gap-10 text-lg text-gray-200">
@@ -42,14 +43,14 @@ export default function Header() {
                         />
                     )}
 
-                    {!open && (
-                        <button
-                            onClick={() => setOpen(true)}
-                            className="p-3 rounded-lg bg-white/10 hover:bg-white/20 transition"
-                        >
-                            <IoSearch className="text-xl" />
-                        </button>
-                    )}
+
+                    <button
+                        onClick={() => setOpen(true)}
+                        className="p-3 rounded-lg bg-white/10 hover:bg-white/20 transition"
+                    >
+                        <IoSearch className="text-xl" />
+                    </button>
+
 
                     {/* Sign In */}
                     <button className="hidden sm:block bg-white text-black text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-gray-200 transition">

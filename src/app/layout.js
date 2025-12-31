@@ -33,8 +33,8 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextTopLoader
-          color="#7ed957"  // Change to your desired color
-          height={6}        // Adjust the height in pixels
+          color="#c53412"  // Change to your desired color
+          height={4}        // Adjust the height in pixels
           speed={800}       // Animation speed in milliseconds
           showSpinner={false} // Hide the loading spinner
           easing="ease"     // Animation easing

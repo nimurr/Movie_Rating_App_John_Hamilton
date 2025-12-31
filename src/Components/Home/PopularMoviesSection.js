@@ -5,6 +5,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 const movies = [
     {
@@ -84,9 +85,9 @@ const PopularMoviesSection = () => {
                                 </p>
 
                                 <div className="flex gap-4">
-                                    <button className="scoop-btn scoop bg-orange-600 hover:bg-orange-700 px-6 py-3 text-white font-medium">
+                                    <Link href={`/movie/1`} className="scoop-btn scoop bg-orange-600 hover:bg-orange-700 px-6 py-3 text-white font-medium">
                                         View Details
-                                    </button>
+                                    </Link>
 
                                     <button className="scoop-btn scoop bg-white text-black px-6 py-3 font-medium flex items-center gap-2">
                                         Watch Trailer ▶

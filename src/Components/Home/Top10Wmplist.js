@@ -5,6 +5,7 @@ import { Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const data = {
     Today: Array(10).fill({
@@ -71,7 +72,7 @@ const Top10Wmplist = () => {
             >
                 {data[activeTab].map((item, index) => (
                     <SwiperSlide key={index}>
-                        <div className="bg-[#122433] cursor-pointer gap-3 flex items-center text-white p-5 rounded-xl h-full">
+                        <Link href={`/movie/1`} className="bg-[#122433] cursor-pointer gap-3 flex items-center text-white p-5 rounded-xl h-full">
                             <img className="w-20 h-32" src="https://i.ibb.co.com/8nSPBNBD/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547-screen.jpg" alt="" />
                             <div>
                                 <div className="text-sm text-gray-400 mb-2">
@@ -88,7 +89,7 @@ const Top10Wmplist = () => {
                                 </div>
                             </div>
 
-                        </div>
+                        </Link>
                     </SwiperSlide>
                 ))}
             </Swiper>

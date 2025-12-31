@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
@@ -94,7 +95,7 @@ const IntheSpotLight = () => {
             <div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5'>
                 {
                     [...Array(20)].map((item) => (
-                        <div key={item} className='text-white relative bg-[#1a3248] rounded-lg overflow-hidden'>
+                        <Link href={`/movie/1`} key={item} className='text-white relative bg-[#1a3248] rounded-lg overflow-hidden'>
                             <img className='w-full max-h-60 object-cover' src="https://i.ibb.co.com/8nSPBNBD/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547-screen.jpg" alt="" />
                             <div className='absolute top-52 right-5'>
                                 <span>8.5</span>
@@ -107,7 +108,7 @@ const IntheSpotLight = () => {
                                     <li className='ml-3'>2hr 30min</li>
                                 </ul>
                             </div>
-                        </div>
+                        </Link>
                     ))
                 }
             </div>

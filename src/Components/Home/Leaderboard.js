@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import {
     FaStar,
@@ -42,19 +43,21 @@ const Leaderboard = () => {
             {/* Card */}
             <div className="space-y-3">
                 {
-                    [...Array(10)].map((item , index) => (
+                    [...Array(10)].map((item, index) => (
                         <div className="bg-[#16324a] rounded-xl p-4 flex items-center justify-between gap-6">
 
                             {/* LEFT */}
                             <div className="flex gap-4 items-center">
 
                                 {/* Poster */}
-                                <div className="relative w-20 h-28 flex-shrink-0">
-                                    <img
-                                        src="https://i.ibb.co.com/8nSPBNBD/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547-screen.jpg"
-                                        alt="Movie Poster"
-                                        className="w-full h-full object-cover rounded-lg"
-                                    />
+                                <div className="relative w-24 h-28 flex-shrink-0">
+                                    <Link href={`/movie/1`} >
+                                        <img
+                                            src="https://i.ibb.co.com/8nSPBNBD/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547-screen.jpg"
+                                            alt="Movie Poster"
+                                            className="w-full h-full object-cover rounded-lg"
+                                        />
+                                    </Link>
 
                                     <button className="absolute left-2 top-2 bg-black/70 w-8 h-8 rounded flex items-center justify-center text-white">
                                         <FaPlus size={14} />
