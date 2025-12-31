@@ -41,7 +41,7 @@ const HeroSection = () => {
               />
 
               <div>
-                <h3 className="font-semibold text-lg">Opera GX</h3>
+                <h3 className="font-semibold text-lg">Opera LG</h3>
                 <p className="text-sm text-gray-500">Click to install</p>
               </div>
             </div>
