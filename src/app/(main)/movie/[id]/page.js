@@ -7,7 +7,7 @@ const Page = () => {
                 sidebar
             </div>
             <div className='col-span-3 bg-red-500 p-5'>
-                main
+                main content
             </div>
         </div>
     );
