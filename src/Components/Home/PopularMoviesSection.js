@@ -33,7 +33,7 @@ const PopularMoviesSection = () => {
     };
 
     return (
-        <>
+        <section id="popular-movies">
             <div className="max-w-7xl mx-auto px-4 md:px-0 py-10 md:py-20">
                 {/* Header */}
                 <div className="flex justify-center mb-10">
@@ -151,7 +151,7 @@ const PopularMoviesSection = () => {
                     </div>
                 </div>
             )}
-        </>
+        </section>
     );
 };
 

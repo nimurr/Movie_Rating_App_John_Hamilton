@@ -24,7 +24,9 @@ export default function Layout({ children }) {
     return (
         <div className="min-h-screen w-full bg-cover bg-center object-cover bg-[url('/Images/Home/pages_bg.png')]">
             <Header />
-            {children}
+            <div className="pt-5">
+                {children}
+            </div>
             <Footer />
         </div>
     );
