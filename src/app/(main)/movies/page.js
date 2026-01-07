@@ -30,15 +30,15 @@ const Page = () => {
             {/* Modal */}
             {modalOpen && (
                 <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-                    <div className="relative bg-transparent p-5 rounded-xl max-w-lg w-full">
+                    <div className="relative bg-transparent p-5 rounded-xl max-w-xl w-full">
                         <button
                             onClick={() => setModalOpen(false)}
-                            className="absolute top-2 right-2 text-white text-2xl hover:text-gray-300"
+                            className="absolute top-2 right-2 text-white text-4xl hover:text-gray-300"
                         >
                             <IoClose />
                         </button>
                         <img
-                            src={'https://i.ibb.co.com/8nSPBNBD/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547-screen.jpg'}
+                            src={'/Images/Others/moviews-ads-404.png'}
                             alt="Modal"
                             className="w-full h-auto rounded-lg"
                         />
