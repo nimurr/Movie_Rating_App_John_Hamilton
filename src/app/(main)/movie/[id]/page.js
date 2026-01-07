@@ -6,6 +6,7 @@ import { FaRegHeart } from "react-icons/fa6";
 import { CiBookmarkPlus } from "react-icons/ci";
 import Keywords from '@/Components/movieDetails/Keywords';
 import Top10WMRListForDetails from '@/Components/movieDetails/Top10WMRListForDetails';
+import AllSeasons from '@/Components/movieDetails/AllSeasons';
 
 
 
@@ -48,6 +49,7 @@ const Page = () => {
             <div className='flex gap-10 max-w-7xl mx-auto py-10'>
                 <div className='w-2/3'>
                     <GastSlider />
+                    <AllSeasons />
                 </div>
                 <div className='w-1/3 '>
                     <Keywords />

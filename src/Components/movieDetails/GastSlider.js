@@ -57,11 +57,10 @@ const GastSlider = () => {
         <section className="w-full ">
 
             {/* Title */}
-            <div className="flex items-center gap-3 mb-10 ">
-                <span className="text-red-500 text-2xl">★</span>
-                <h1 className="text-white text-2xl font-bold tracking-widest">CAST</h1>
-                <span className="text-red-500 text-2xl">★</span>
+            <div className="mb-5">
+                <img src="/Images/Movies/header_cast.png" alt="" />
             </div>
+
 
             {/* Slider */}
             <div className="relative">
