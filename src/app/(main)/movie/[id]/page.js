@@ -8,6 +8,7 @@ import Keywords from '@/Components/movieDetails/Keywords';
 import Top10WMRListForDetails from '@/Components/movieDetails/Top10WMRListForDetails';
 import AllSeasons from '@/Components/movieDetails/AllSeasons';
 import WmrRatings from '@/Components/movieDetails/WmrRatings';
+import UserRatingsAll from '@/Components/movieDetails/UserRatingsAll';
 
 
 
@@ -52,6 +53,7 @@ const Page = () => {
                     <GastSlider />
                     <AllSeasons />
                     <WmrRatings />
+                    <UserRatingsAll />
                 </div>
                 <div className='w-1/3 '>
                     <Keywords />
