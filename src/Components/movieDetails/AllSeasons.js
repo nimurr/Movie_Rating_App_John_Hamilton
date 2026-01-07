@@ -76,7 +76,7 @@ const AllSeasons = () => {
                 {/* Track */}
                 <div
                     ref={sliderRef}
-                    className="flex gap-10 overflow-x-scroll scroll-smooth no-scrollbar"
+                    className="flex gap-5 overflow-x-scroll scroll-smooth no-scrollbar"
                 >
                     {castData.map((cast) => (
                         <div
@@ -101,7 +101,7 @@ const AllSeasons = () => {
                                     <li className="list-disc ml-4">22m</li>
                                 </ul>
 
-                                <p className="text-xs text-gray-300 max-w-40 leading-relaxed">
+                                <p className="text-xs text-gray-300 max-w-60 leading-relaxed">
                                     This season introduced the main characters and established the general
                                     plot, which revolves around Michael Scott .
                                 </p>

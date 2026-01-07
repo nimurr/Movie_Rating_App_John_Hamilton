@@ -7,6 +7,7 @@ import { CiBookmarkPlus } from "react-icons/ci";
 import Keywords from '@/Components/movieDetails/Keywords';
 import Top10WMRListForDetails from '@/Components/movieDetails/Top10WMRListForDetails';
 import AllSeasons from '@/Components/movieDetails/AllSeasons';
+import WmrRatings from '@/Components/movieDetails/WmrRatings';
 
 
 
@@ -50,6 +51,7 @@ const Page = () => {
                 <div className='w-2/3'>
                     <GastSlider />
                     <AllSeasons />
+                    <WmrRatings />
                 </div>
                 <div className='w-1/3 '>
                     <Keywords />
