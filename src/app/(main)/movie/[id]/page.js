@@ -9,6 +9,7 @@ import Top10WMRListForDetails from '@/Components/movieDetails/Top10WMRListForDet
 import AllSeasons from '@/Components/movieDetails/AllSeasons';
 import WmrRatings from '@/Components/movieDetails/WmrRatings';
 import UserRatingsAll from '@/Components/movieDetails/UserRatingsAll';
+import AllMedia from '@/Components/movieDetails/AllMedia';
 
 
 
@@ -54,6 +55,7 @@ const Page = () => {
                     <AllSeasons />
                     <WmrRatings />
                     <UserRatingsAll />
+                    <AllMedia />
                 </div>
                 <div className='w-1/3 '>
                     <Keywords />

@@ -41,12 +41,8 @@ const UserRatingsAll = () => {
             <div className="max-w-6xl mx-auto px-4">
 
                 {/* HEADER */}
-                <div className="flex items-center gap-4 mb-8">
-                    <span className="text-orange-500 text-3xl">★</span>
-                    <h2 className="text-3xl font-extrabold tracking-widest">
-                        USER REVIEWS
-                    </h2>
-                    <span className="text-orange-500 text-3xl">★</span>
+                <div className="mb-5">
+                    <img src="/Images/Movies/userReview-All.png" alt="" />
                 </div>
 
                 {/* ADD REVIEW */}

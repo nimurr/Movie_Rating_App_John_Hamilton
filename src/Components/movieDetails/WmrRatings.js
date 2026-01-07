@@ -26,12 +26,8 @@ const WmrRatings = () => {
             <section className="w-full bg-[#1a3248] rounded-xl p-6 text-white">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
-                        <span className="text-red-500 text-xl">★</span>
-                        <h2 className="text-2xl font-extrabold tracking-widest">
-                            WMR RATINGS
-                        </h2>
-                        <span className="text-red-500 text-xl">★</span>
+                    <div className="mb-5">
+                        <img src="/Images/Movies/WmrRatings.png" alt="" />
                     </div>
 
                     <button
