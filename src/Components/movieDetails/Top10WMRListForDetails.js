@@ -28,7 +28,7 @@ const Top10WMRListForDetails = () => {
     const [activeTab, setActiveTab] = useState("Today");
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="max-w-7xl mx-auto lg:px-4 py-16">
 
             {/* Title */}
             <div className="flex items-center justify-center mb-10">

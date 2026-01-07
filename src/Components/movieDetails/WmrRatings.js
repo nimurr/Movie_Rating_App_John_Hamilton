@@ -39,7 +39,7 @@ const WmrRatings = () => {
                 </div>
 
                 {/* Content */}
-                <div className="flex items-center gap-5">
+                <div className="flex lg:flex-row flex-col items-center gap-5">
                     {/* Score */}
                     <div className="min-w-[200px] flex gap-3">
                         <div className="text-5xl font-bold">8.5</div>

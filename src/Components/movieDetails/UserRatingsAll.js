@@ -52,11 +52,15 @@ const UserRatingsAll = () => {
                         alt="user"
                         className="w-12 h-12 rounded-full object-cover"
                     />
-                    <input
-                        type="text"
-                        placeholder="Add Your Review"
-                        className="w-full bg-transparent border-b border-white/40 focus:outline-none py-2 text-sm placeholder:text-gray-300"
-                    />
+                    <div className="relative w-full">
+                        <input
+                            type="text"
+                            placeholder="Add Your Review"
+                            className="w-full bg-transparent border-b border-white/40 focus:outline-none py-2 text-sm placeholder:text-gray-300"
+                        />
+                        <button className="absolute rounded-lg cursor-pointer top-1/2 right-0 transform -translate-y-1/2 text-sm bg-[#275d8f] hover:bg-[#274c6e] text-white py-1 px-4">Send</button>
+                    </div>
+
                 </div>
 
                 <hr className="border-white/20 mb-8" />

@@ -10,15 +10,16 @@ import AllSeasons from '@/Components/movieDetails/AllSeasons';
 import WmrRatings from '@/Components/movieDetails/WmrRatings';
 import UserRatingsAll from '@/Components/movieDetails/UserRatingsAll';
 import AllMedia from '@/Components/movieDetails/AllMedia';
+import RecommendationsMovie from '@/Components/movieDetails/RecommendationsMovie';
 
 
 
 const Page = () => {
     return (
-        <div>
-            <div className='bg-cover flex items-center justify-center  w-full min-h-[80vh] object-cover bg-[url("/Images/Movies/detialspage_hero.png")] bg-no-repeat h-full'>
-                <div className="max-w-7xl mx-auto w-full flex items-center gap-5">
-                    <img className='max-w-60' src="/Images/Movies/Movie_poster.png" alt="" />
+        <div >
+            <div className='bg-cover flex items-center justify-center  w-full min-h-[80vh] object-cover bg-[url("/Images/Movies/detialspage_hero.png")] bg-no-repeat h-full xl:px-0 px-5 py-10'>
+                <div className="max-w-7xl mx-auto w-full flex xl:flex-row flex-col items-center gap-5">
+                    <img className='max-w-48 lg:max-w-60' src="/Images/Movies/Movie_poster.png" alt="" />
                     <div>
                         <h2 className='lg:text-5xl text-3xl font-semibold text-white'>The Office Series</h2>
                         <ul className='text-white my-3 flex items-center gap-3 list-disc'>
@@ -38,7 +39,7 @@ const Page = () => {
                         <br />
                         <div className='text-gray-300'>
                             <h2 className='text-xl mb-2'>Overview</h2>
-                            <p>A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, tedium and romance. A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, tedium and romance.</p>
+                            <p>A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, tedium and romance......</p>
                             <br />
                             <p className=''>Genre: Mockumentary, Comedy, Sitcom</p>
                             <p className=''>Year: 2005-2013</p>
@@ -49,15 +50,16 @@ const Page = () => {
 
             </div>
 
-            <div className='flex gap-10 max-w-7xl mx-auto py-10'>
-                <div className='w-2/3'>
+            <div className='flex xl:flex-row flex-col gap-10 max-w-7xl mx-auto py-10 xl:px-0 px-5'>
+                <div className='xl:w-2/3'>
                     <GastSlider />
                     <AllSeasons />
                     <WmrRatings />
                     <UserRatingsAll />
                     <AllMedia />
+                    <RecommendationsMovie />
                 </div>
-                <div className='w-1/3 '>
+                <div className='xl:w-1/3 '>
                     <Keywords />
                     <Top10WMRListForDetails />
                 </div>
