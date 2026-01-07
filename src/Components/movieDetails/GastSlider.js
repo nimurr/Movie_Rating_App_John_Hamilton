@@ -1,5 +1,6 @@
 'use client';
 
+import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
@@ -78,7 +79,8 @@ const GastSlider = () => {
                     className="flex gap-10 overflow-x-scroll scroll-smooth whitespace-nowrap no-scrollbar"
                 >
                     {castData.map((cast) => (
-                        <div
+                        <Link
+                            href={`/actors/${cast.id}`}
                             key={cast.id}
                             className="flex items-center gap-3 min-w-[250px] text-center text-white"
                         >
@@ -90,7 +92,7 @@ const GastSlider = () => {
                                 <h3 className="mt-3 font-semibold">{cast.name}</h3>
                                 <p className="text-sm text-gray-300">{cast.role}</p>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 

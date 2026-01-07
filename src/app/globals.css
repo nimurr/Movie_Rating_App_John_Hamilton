@@ -74,3 +74,56 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+/* Wrapper hides overflow */
+.knownfor-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Moving track */
+.knownfor-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollLeft 20s linear infinite;
+}
+
+/* Pause animation on hover */
+.knownfor-wrapper:hover .knownfor-track {
+  animation-play-state: paused;
+}
+
+/* Card */
+.knownfor-card {
+  min-width: 200px;
+  max-width: 200px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.knownfor-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Slight zoom on hover */
+.knownfor-card:hover {
+  transform: scale(1.05);
+}
+
+/* Keyframes */
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
