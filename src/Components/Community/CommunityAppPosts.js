@@ -1,13 +1,29 @@
-import React from "react";
+'use client';
+import React, { useState } from "react";
 import {
     FaArrowUp,
     FaArrowDown,
     FaRegCommentDots,
     FaRetweet,
     FaEllipsisH,
+    FaTimes,
 } from "react-icons/fa";
 
 const CommunityAppPosts = () => {
+    const reasons = [
+        { title: "Inappropriate Content", desc: "This post contains offensive or explicit material." },
+        { title: "Spam", desc: "This post seems to be irrelevant or promotional." },
+        { title: "Harassment", desc: "This post is bullying or targeting individuals in a harmful way." },
+        { title: "Spoilers", desc: "This post reveals key plot details without warning." },
+        { title: "Off-Topic", desc: "This post is unrelated to the community or movie discussions." },
+        { title: "Misinformation", desc: "This post contains incorrect or misleading information." },
+        { title: "Hate Speech", desc: "This post promotes hate or discrimination." },
+        { title: "False Rating", desc: "This post includes manipulated or fake reviews." },
+        { title: "Other", desc: "Any other reason not listed above." },
+    ];
+
+    const [repostOpen, setRepostOpen] = useState(false);
+    const [selected, setSelected] = useState(null);
     return (
         <div className="space-y-3 sticky top-0">
             {
@@ -71,7 +87,7 @@ const CommunityAppPosts = () => {
                                     <span className="text-xs">24</span>
                                 </button>
 
-                                <button className="flex items-center gap-1 hover:text-green-400">
+                                <button onClick={() => setRepostOpen(true)} className="flex items-center gap-1 hover:text-green-400">
                                     <FaRetweet />
                                     <span className="text-xs">Repost</span>
                                 </button>
@@ -82,6 +98,43 @@ const CommunityAppPosts = () => {
                     </div>
                 ))
             }
+
+            {/* Repost / Report Modal */}
+            {repostOpen && (
+                <div className="fixed inset-0 z-[999] pt-20 flex items-center justify-center bg-black/60">
+                    <div className="w-full max-w-lg rounded-xl bg-[#1f2a37] p-5">
+                        <div className="mb-4 flex items-center justify-between">
+                            <h2 className="text-lg font-semibold text-white">Why are you reporting this post?</h2>
+                            <FaTimes onClick={() => setRepostOpen(false)} className="cursor-pointer text-gray-400" />
+                        </div>
+
+                        <div className="space-y-3">
+                            {reasons.map((r, i) => (
+                                <label key={i} className="flex cursor-pointer gap-3 rounded-lg border border-gray-700 p-3 hover:bg-[#2a3646]">
+                                    <input
+                                        type="radio"
+                                        name="reason"
+                                        checked={selected === i}
+                                        onChange={() => setSelected(i)}
+                                    />
+                                    <div>
+                                        <p className="text-sm font-semibold text-white">{r.title}</p>
+                                        <p className="text-xs text-gray-400">{r.desc}</p>
+                                    </div>
+                                </label>
+                            ))}
+                        </div>
+
+                        <button
+                            disabled={selected === null}
+                            onClick={() => setRepostOpen(false)}
+                            className="mt-4 w-full rounded-lg bg-red-600 py-2 text-white disabled:opacity-50"
+                        >
+                            Submit Report
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
