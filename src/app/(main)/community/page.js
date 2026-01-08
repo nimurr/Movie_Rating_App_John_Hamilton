@@ -1,9 +1,14 @@
+import CommunityLeftSide from '@/Components/Community/CommunityLeftSide';
+import CommunityMainContents from '@/Components/Community/CommunityMainContents';
+import CommunityRightSide from '@/Components/Community/CommunityRightSide';
 import React from 'react';
 
 const Page = () => {
     return (
-        <div className='h-screen py-24 text-white'>
-            <h2 className='text-3xl font-semibold text-center'>Community</h2>
+        <div className='max-w-7xl mx-auto w-full pt-24 text-white'>
+            <CommunityLeftSide />
+            <CommunityMainContents />
+            <CommunityRightSide />
         </div>
     );
 }
