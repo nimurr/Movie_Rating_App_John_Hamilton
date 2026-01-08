@@ -1,6 +1,7 @@
 'use client';
 import ProfileOthersAllinfo from '@/Components/Profile/ProfileOthersAllinfo';
 import UpcomingForWatchlist from '@/Components/Profile/UpcomingForWatchlist';
+import YourFavorites from '@/Components/Profile/YourFavorites';
 import YourWatchlist from '@/Components/Profile/YourWatchlist';
 import React from 'react';
 
@@ -10,6 +11,7 @@ const Page = () => {
             <ProfileOthersAllinfo />
             <UpcomingForWatchlist />
             <YourWatchlist />
+            <YourFavorites />
 
         </div>
     );
