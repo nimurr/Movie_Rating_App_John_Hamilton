@@ -43,7 +43,7 @@ const CommunityMainContents = () => {
       >
         <img src="https://i.pravatar.cc/40" className="h-10 w-10 rounded-full" />
         <div className="flex-1 rounded-full border border-gray-600 p-3 text-sm text-gray-300">
-          Share your thoughts, reviews, or recommendations!
+          Share your thoughts, reviews
         </div>
         <FaImage className="text-gray-300" />
         <FaVideo className="text-gray-300" />
