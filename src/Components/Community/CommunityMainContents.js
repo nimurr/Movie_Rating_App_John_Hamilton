@@ -118,7 +118,7 @@ const CommunityMainContents = () => {
                                 </div>
                             </div>
 
-                            <button className="mt-4 w-full rounded-lg bg-blue-600 py-2 font-semibold text-white transition hover:bg-blue-700">
+                            <button  onClick={() => setOpen(false)} className="mt-4 w-full rounded-lg bg-blue-600 py-2 font-semibold text-white transition hover:bg-blue-700">
                                 Post
                             </button>
                         </div>
