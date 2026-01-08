@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "../../globals.css";
+import ProfileHeader from "@/Components/Profile/ProfileHeader";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -21,7 +22,7 @@ export const metadata = {
 export default function Layout({ children }) {
     return (
         <div className="min-h-screen w-full bg-cover bg-center object-cover bg-[url('/Images/Home/pages_bg.png')]">
-
+            <ProfileHeader />
             <div className="">
                 {children}
             </div>
