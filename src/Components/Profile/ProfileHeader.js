@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const ProfileHeader = () => {
@@ -24,12 +25,12 @@ const ProfileHeader = () => {
                             Tasmiasahabu
                         </h2>
                         <div className="flex gap-6 text-sm text-gray-300 mt-5">
-                            <span className='underline cursor-pointer'>
+                            <Link href="/profile/followers" className='underline cursor-pointer'>
                                 <strong className="text-gray-50">50</strong> Followers
-                            </span>
-                            <span className='underline cursor-pointer'>
+                            </Link>
+                            <Link href="/profile/following"  className='underline cursor-pointer'>
                                 <strong className="text-gray-50">102</strong> Following
-                            </span>
+                            </Link>
                         </div>
                     </div>
                 </div>
