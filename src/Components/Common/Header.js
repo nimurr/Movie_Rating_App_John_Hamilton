@@ -62,9 +62,12 @@ export default function Header() {
           </button>
 
           {/* Sign In */}
-          <button className="hidden sm:block bg-white text-black text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-gray-200 transition">
+          {/* <button className="hidden sm:block bg-white text-black text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-gray-200 transition">
             Sign In
-          </button>
+          </button> */}
+          <Link href="/profile">
+            <img className="w-14 rounded-full" src="https://static.vecteezy.com/system/resources/previews/056/673/911/non_2x/businessman-avatar-in-circle-icon-businessman-profile-avatar-illustration-vector.jpg" alt="" />
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
