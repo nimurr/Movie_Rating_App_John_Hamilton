@@ -2,7 +2,7 @@ import React from 'react';
 
 const CommunityMainContents = () => {
     return (
-        <div>
+        <div className='col-span-2'>
 
         </div>
     );
