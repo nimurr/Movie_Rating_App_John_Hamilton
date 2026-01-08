@@ -1,20 +1,31 @@
-import CommunityLeftSide from '@/Components/Community/CommunityLeftSide';
-import CommunityMainContents from '@/Components/Community/CommunityMainContents';
-import CommunityRightSide from '@/Components/Community/CommunityRightSide';
-import React from 'react';
+import React from "react";
+import CommunityLeftSide from "@/Components/Community/CommunityLeftSide";
+import CommunityMainContents from "@/Components/Community/CommunityMainContents";
+import CommunityRightSide from "@/Components/Community/CommunityRightSide";
 
 const Page = () => {
     return (
-        <div className='max-w-7xl relative mx-auto w-full pt-28 text-white grid grid-cols-4 items-start gap-10 '>
-            <div className='sticky top-24'>
-                <CommunityLeftSide />
-            </div>
-            <CommunityMainContents />
-            <div className='sticky top-24'>
-                <CommunityRightSide />
+        <div className="mx-auto w-full max-w-7xl pt-28 text-white">
+            <div className="grid grid-cols-1 gap-10 xl:grid-cols-4">
+
+                {/* LEFT SIDEBAR */}
+                <aside className="hidden xl:sticky xl:top-24 xl:col-span-1 xl:block">
+                    <CommunityLeftSide />
+                </aside>
+
+                {/* MAIN CONTENT */}
+                <main className="col-span-1 xl:col-span-2">
+                    <CommunityMainContents />
+                </main>
+
+                {/* RIGHT SIDEBAR */}
+                <aside className="hidden xl:sticky xl:top-24 xl:col-span-1 xl:block">
+                    <CommunityRightSide />
+                </aside>
+
             </div>
         </div>
     );
-}
+};
 
 export default Page;

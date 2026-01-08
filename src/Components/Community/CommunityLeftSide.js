@@ -4,7 +4,7 @@ import { FaCheck, FaHeart, FaPlus, FaStar, FaTimes } from 'react-icons/fa';
 
 const CommunityLeftSide = () => {
     return (
-        <div className='col-span-1'>
+        <div className=''>
             <div className="flex items-center mb-5">
                 <img className='w-64' src="/Images/Movies/wmrLeaderboard.png" alt="" />
             </div>

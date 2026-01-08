@@ -26,7 +26,7 @@ const suggestions = Array(4).fill({
 
 const CommunityRightSide = () => {
     return (
-        <aside className="w-full col-span-1 max-w-sm rounded-xl bg-[#16324a] p-4 text-white shadow-xl">
+        <aside className="w-full max-w-sm rounded-xl bg-[#16324a] p-4 text-white shadow-xl">
             {/* Recommended Topics */}
             <div className="mb-6">
                 <div className="flex items-center mb-5">
