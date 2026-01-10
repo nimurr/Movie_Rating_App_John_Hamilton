@@ -55,7 +55,7 @@ const Page = () => {
             {/* Right Side Image */}
             <img
                 className='lg:block hidden'
-                src="/Images/Auth/auth_image.png"
+                src="/Images/Auth/auth_image.png w-full"
                 alt="auth"
             />
         </div>

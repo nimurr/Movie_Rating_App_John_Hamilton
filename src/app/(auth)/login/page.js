@@ -80,7 +80,7 @@ const Page = () => {
                     <p className='text-center mt-5 text-gray-600 flex items-center gap-2 justify-center'>Don't have an account? <Link className='text-secondary font-semibold' href="/signup" >Sign Up</Link></p>
                 </div>
             </div>
-            <img className='lg:block hidden' src="/Images/Auth/auth_image.png" alt="" />
+            <img className='lg:block hidden w-full' src="/Images/Auth/auth_image.png" alt="" />
         </div>
     );
 };
