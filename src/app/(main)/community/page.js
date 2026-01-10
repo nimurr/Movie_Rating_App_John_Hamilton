@@ -9,8 +9,10 @@ const Page = () => {
             <div className="grid grid-cols-1 gap-10 xl:grid-cols-4">
 
                 {/* LEFT SIDEBAR */}
-                <aside className="hidden xl:sticky xl:top-24 xl:col-span-1 xl:block">
-                    <CommunityLeftSide />
+                <aside className="hidden xl:block">
+                    <div className="sticky top-28">
+                        <CommunityLeftSide />
+                    </div>
                 </aside>
 
                 {/* MAIN CONTENT */}
@@ -19,8 +21,10 @@ const Page = () => {
                 </main>
 
                 {/* RIGHT SIDEBAR */}
-                <aside className="hidden xl:sticky xl:top-24 xl:col-span-1 xl:block">
-                    <CommunityRightSide />
+                <aside className="hidden xl:block">
+                    <div className="sticky top-28">
+                        <CommunityRightSide />
+                    </div>
                 </aside>
 
             </div>

@@ -28,7 +28,7 @@ const Page = () => {
         <div className=" mx-auto max-w-7xl px-4 py-28">
 
             <div className="flex items-center py-10">
-                <img className="max-w-64" src="/Images/Movies/yourRatings.png" alt="" />
+                <img className="max-w-64" src="/Images/Movies/your_favorites.png" alt="" />
             </div>
 
             {/* Top bar */}
