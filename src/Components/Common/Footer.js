@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='bg-[url("/Images/Home/footer.png")] object-cover bg-cover bg-no-repeat h-full bg-[#152f45] w-full flex  items-center min-h-40 text-white py-5 text-xl text-center mt-5'>
-            <div className="max-w-7xl mx-auto pt-8 flex items-center justify-between gap-10 w-full px-5">
+        <div className='sm:bg-[url("/Images/Home/footer.png")] object-cover bg-cover bg-no-repeat h-full bg-[#152f45] w-full flex sm:flex-row flex-col items-center min-h-40 text-white py-5 text-xl text-center mt-5'>
+            <div className="max-w-7xl mx-auto pt-8 flex md:flex-row flex-col items-center justify-between gap-10 w-full px-5">
                 <img className='w-40' src="/Images/Auth/logo.png" alt="" />
                 <ul className='md:flex items-center text-sm justify-center gap-8 space-y-1 flex-wrap'>
                     <li className='cursor-pointer'>Popular</li>

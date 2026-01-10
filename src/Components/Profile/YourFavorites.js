@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaTimes, FaHeart, FaCheck } from "react-icons/fa";
 
@@ -16,9 +17,9 @@ const YourFavorites = () => {
             {/* Header */}
             <div className="mb-5 flex items-center justify-between">
                 <img src="/Images/Movies/your_favorites.png" alt="" />
-                <button className="text-sm text-orange-400 hover:underline">
+                <Link href="/favorite" className="text-sm text-orange-400 hover:underline">
                     View All
-                </button>
+                </Link>
             </div>
 
             {/* Cards */}

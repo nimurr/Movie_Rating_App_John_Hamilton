@@ -2,6 +2,7 @@
 import ProfileOthersAllinfo from '@/Components/Profile/ProfileOthersAllinfo';
 import UpcomingForWatchlist from '@/Components/Profile/UpcomingForWatchlist';
 import YourFavorites from '@/Components/Profile/YourFavorites';
+import YourRatings from '@/Components/Profile/YourRatings';
 import YourWatchlist from '@/Components/Profile/YourWatchlist';
 import React from 'react';
 
@@ -12,6 +13,7 @@ const Page = () => {
             <UpcomingForWatchlist />
             <YourWatchlist />
             <YourFavorites />
+            <YourRatings />
         </div>
     );
 };

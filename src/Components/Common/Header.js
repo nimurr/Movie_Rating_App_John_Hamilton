@@ -1,16 +1,29 @@
 'use client';
 import Link from "next/link";
-import React, { useState, useRef } from "react";
-import { IoSearch, IoMenu, IoClose } from "react-icons/io5";
+import React, { useState, useRef, useEffect } from "react";
+import { IoSearch, IoMenu, IoClose, IoLogOut, IoSettings } from "react-icons/io5";
+import { FaBookmark, FaHeart, FaStar, FaEdit, FaUser, FaRedo } from "react-icons/fa";
 
 export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const inputRef = useRef(null);
+  const [profileOpen, setProfileOpen] = useState(false);
+  const profileRef = useRef(null);
 
   const handleBlur = () => {
     setTimeout(() => setSearchOpen(false), 150);
   };
+
+  // Close profile drawer on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (profileRef.current && !profileRef.current.contains(e.target)) {
+        setProfileOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const navItems = [
     { name: "Popular", link: "/#popular-movies" },
@@ -21,21 +34,18 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-2 left-0 w-full z-50  text-white">
-      <div className="flex items-center justify-between bg-[#0b1220]/60 rounded-lg  backdrop-blur-sm max-w-7xl mx-auto px-4 md:px-3 py-4">
+    <header className="fixed top-2 left-0 w-full z-50 text-white">
+      <div className="flex items-center justify-between bg-[#0b1220]/60 rounded-lg backdrop-blur-sm max-w-7xl mx-auto px-4 md:px-3 py-4">
+        
         {/* Logo */}
         <Link href="/" className="text-2xl font-extrabold tracking-wide">
-          <img src="/Images/Auth/logo.png" alt="Logo" className="h-8 w-auto" />
+          <img src="/Images/Auth/logo.png" alt="Logo" className=" w-28 sm:w-auto" />
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-10 text-lg text-gray-200">
           {navItems.map((item) => (
-            <Link
-              href={item.link}
-              key={item.name}
-              className="hover:text-white cursor-pointer transition"
-            >
+            <Link key={item.name} href={item.link} className="hover:text-white">
               {item.name}
             </Link>
           ))}
@@ -43,62 +53,89 @@ export default function Header() {
 
         {/* Actions */}
         <div className="flex items-center gap-3 relative">
+          
           {/* Search */}
           {searchOpen && (
             <input
-              ref={inputRef}
               autoFocus
               onBlur={handleBlur}
-              type="text"
               placeholder="Search..."
-              className="absolute right-14 md:right-20 py-2.5 bg-[#111827] border border-gray-600 rounded-lg px-4 text-sm outline-none w-48"
+              className="absolute md:w-auto right-28 md:right-14 py-2.5 bg-[#111827] border border-gray-600 rounded-lg px-4 text-sm outline-none w-48"
             />
           )}
           <button
             onClick={() => setSearchOpen(true)}
-            className="p-3 rounded-lg bg-white/10 hover:bg-white/20 transition"
+            className="p-3 rounded-lg bg-white/10 hover:bg-white/20"
           >
             <IoSearch className="text-xl" />
           </button>
 
-          {/* Sign In */}
-          {/* <button className="hidden sm:block bg-white text-black text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-gray-200 transition">
-            Sign In
-          </button> */}
-          <Link href="/profile">
-            <img className="w-14 rounded-full" src="https://static.vecteezy.com/system/resources/previews/056/673/911/non_2x/businessman-avatar-in-circle-icon-businessman-profile-avatar-illustration-vector.jpg" alt="" />
-          </Link>
+          {/* Profile */}
+          <div className="relative" ref={profileRef}>
+            <img
+              onClick={() => setProfileOpen(!profileOpen)}
+              className="w-12 h-12 rounded-full cursor-pointer border-2 border-white/20"
+              src="https://static.vecteezy.com/system/resources/previews/056/673/911/non_2x/businessman-avatar-in-circle-icon-businessman-profile-avatar-illustration-vector.jpg"
+              alt="profile"
+            />
 
-          {/* Mobile Menu Button */}
+            {/* Profile Drawer */}
+            {profileOpen && (
+              <div className="absolute right-0 mt-4 w-64 bg-[#0f172a] rounded-xl shadow-xl border border-white/10 overflow-hidden">
+                
+                {/* User Info */}
+                <div className="px-4 py-4 border-b border-white/10">
+                  <p className="font-semibold">Tasmia Hassan Shabonty</p>
+                  <Link href="/profile" className="text-sm text-blue-400 hover:underline">
+                    View Profile
+                  </Link>
+                </div>
+
+                {/* Menu Items */}
+                <div className="py-2 text-sm">
+                  <MenuItem icon={<FaBookmark />} text="Bookmarks" />
+                  <MenuItem icon={<FaStar />} text="Watchlist" />
+                  <MenuItem icon={<FaHeart />} text="Ratings" />
+                  <MenuItem icon={<FaRedo />} text="Repost" />
+                  <MenuItem icon={<FaHeart />} text="Favorite" />
+                  <MenuItem icon={<FaEdit />} text="Edit Profile" />
+                  <MenuItem icon={<IoSettings />} text="Settings" />
+
+                  <div className="border-t border-white/10 mt-2">
+                    <MenuItem
+                      icon={<IoLogOut />}
+                      text="Logout"
+                      danger
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Mobile Menu */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden p-3 rounded-lg bg-white/10 hover:bg-white/20 transition"
+            className="lg:hidden p-3 rounded-lg bg-white/10 hover:bg-white/20"
           >
             {menuOpen ? <IoClose size={22} /> : <IoMenu size={22} />}
           </button>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="lg:hidden bg-[#0b1220]/90 backdrop-blur-sm border-t border-white/10">
-          <nav className="flex flex-col px-6 py-4 gap-4 text-gray-200">
-            {navItems.map((item) => (
-              <Link
-                href={item.link}
-                key={item.name}
-                onClick={() => setMenuOpen(false)}
-                className="hover:text-white cursor-pointer transition"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <button className="mt-2 bg-white text-black text-sm font-semibold px-4 py-2 rounded-lg w-fit">
-              Sign In
-            </button>
-          </nav>
-        </div>
-      )}
     </header>
+  );
+}
+
+/* Reusable menu item */
+function MenuItem({ icon, text, danger }) {
+  return (
+    <button
+      className={`flex items-center gap-3 w-full px-4 py-2 hover:bg-white/10 transition ${
+        danger ? "text-red-400 hover:bg-red-500/10" : "text-gray-200"
+      }`}
+    >
+      {icon}
+      <span>{text}</span>
+    </button>
   );
 }
