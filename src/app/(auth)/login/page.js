@@ -1,6 +1,9 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from 'react-icons/fa';
+
 
 const Page = () => {
     // State to toggle password visibility
@@ -12,18 +15,19 @@ const Page = () => {
     };
 
     return (
-        <div className='h-screen bg-gradient-to-b from-[#f9f5ff] to-[#b6a7ca]'>
-             <Link href="/">
-                <img className='md:pl-10 pt-10  md:w-60 w-48 mx-auto md:ml-0' src="/Images/Auth/logo2.png" alt="" />
-            </Link>
-            <div className='flex justify-center mt-20'>
-                <div className='min-w-80'>
-                    <h2 className='text-3xl font-medium text-center'>Login</h2>
-                    <div className='mt-5'>
+        <div className='h-screen overflow-y-auto grid lg:grid-cols-2 bg-[#1a3248] text-white'>
+
+            <div className='flex justify-center items-center mt-20'>
+                <div className='md:min-w-[500px] min-w-full md:px-0 px-5'>
+                    <div>
+                        <img src="/Images/Auth/logo.png" alt="" />
+                        <p className='mt-2'>Login to your account</p>
+                    </div>
+                    <div className='mt-8'>
                         <label className='font-semibold' htmlFor="email">Email</label>
                         <input
                             placeholder='Enter your email'
-                            className='mt-2 w-full p-2 border border-green-400 rounded-md focus:outline-0 ring-0 bg-white'
+                            className='mt-2 w-full p-2 border border-secondary rounded-md focus:outline-0 ring-0 bg-white'
                             type="email"
                             name="email"
                             id="email"
@@ -34,7 +38,7 @@ const Page = () => {
                         <div className='relative'>
                             <input
                                 placeholder='Enter your password'
-                                className='mt-2 w-full p-2 border border-green-400 rounded-md focus:outline-0 ring-0 bg-white'
+                                className='mt-2 w-full p-2 border border-secondary rounded-md focus:outline-0 ring-0 bg-white'
                                 type={showPassword ? "text" : "password"} // Toggle password visibility
                                 name="password"
                                 id="password"
@@ -54,14 +58,29 @@ const Page = () => {
                             <input className='' type="checkbox" name="remember" id="remember" />
                             <span className='ml-2 text-gray-600'>Remember me</span>
                         </label>
-                        <Link className='text-blue-600 text-sm' href="/forgot-password">Forgot Password</Link>
+                        <Link className='text-secondary text-sm' href="/forgot-password">Forgot Password</Link>
                     </div>
                     <div className='mt-5'>
-                        <button className='cursor-pointer w-full p-2 bg-green-400 font-semibold text-white rounded-md'>Login</button>
+                        <button className='cursor-pointer w-full p-2 bg-secondary font-semibold text-white rounded-md'>Login</button>
                     </div>
-                    <p className='text-center mt-5 text-gray-600'>Don't have an account? <Link className='text-blue-600' href="/signup-step" >Sign Up</Link></p>
+                    {/* or section  */}
+                    <div className='flex items-center justify-center'>
+                        <span className='w-full block h-[1px] mt-1 bg-gray-500'></span>
+                        <p className='text-center text-gray-600'>or</p>
+                        <span className='w-full block h-[1px] mt-1 bg-gray-500'></span>
+                    </div>
+                    <div className='flex flex-wrap lg:flex-nowrap items-center gap-2'>
+                        <div className='mt-5 w-full'>
+                            <button className='cursor-pointer flex items-center justify-center gap-2 w-full p-2  border border-white font-semibold text-white rounded-md'><FcGoogle /> Google</button>
+                        </div>
+                        <div className='mt-5 w-full'>
+                            <button className='cursor-pointer flex items-center justify-center gap-2 w-full p-2  border border-white font-semibold text-white rounded-md'><FaFacebook className='text-blue-500' /> Facebook</button>
+                        </div>
+                    </div>
+                    <p className='text-center mt-5 text-gray-600 flex items-center gap-2 justify-center'>Don't have an account? <Link className='text-secondary font-semibold' href="/signup" >Sign Up</Link></p>
                 </div>
             </div>
+            <img className='lg:block hidden' src="/Images/Auth/auth_image.png" alt="" />
         </div>
     );
 };

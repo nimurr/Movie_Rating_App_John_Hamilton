@@ -1,28 +1,65 @@
-import Link from 'next/link';
+'use client'
 import React from 'react';
+import Link from 'next/link';
 
 const Page = () => {
     return (
-        <div className='h-screen bg-gradient-to-b  from-[#f9f5ff] to-[#b6a7ca] '>
-            <Link href="/">
-                <img className='md:pl-10 pt-10  md:w-60 w-48 mx-auto md:ml-0' src="/Images/Auth/logo2.png" alt="" />
-            </Link>
-            <div className='flex justify-center mt-20'>
-                <div className='min-w-80'>
-                    <h2 className='text-3xl font-medium text-center'>Forgot Password?</h2>
-                    <p className='text-center mt-5 text-gray-600'>Please enter your email address <br /> to reset
-                        your password.</p>
-                    <div className='mt-5'>
-                        <label className='font-semibold' htmlFor="email">Email</label>
-                        <input placeholder='Enter your email' className='mt-2 w-full p-2 border border-green-400 rounded-md focus:outline-0 ring-0 bg-white' type="email" name="email" id="email" />
+        <div className='h-screen overflow-y-auto grid lg:grid-cols-2 bg-[#1a3248] text-white'>
+
+            {/* Left Side */}
+            <div className='flex justify-center items-center mt-20'>
+                <div className='md:min-w-[500px] min-w-full md:px-0 px-5'>
+
+                    {/* Logo & Title */}
+                    <div>
+                        <img src="/Images/Auth/logo.png" alt="logo" />
+                        <p className='mt-2'>Forgot your password?</p>
                     </div>
-                    <Link href={'/verify-otp'} className='mt-5 block'>
-                        <button className='cursor-pointer w-full p-2 bg-green-400 font-semibold text-white rounded-md'>Send OTP</button>
-                    </Link>
+
+                    {/* Description */}
+                    <p className='mt-6 text-gray-400'>
+                        Please enter your email address to receive an OTP
+                        for resetting your password.
+                    </p>
+
+                    {/* Email */}
+                    <div className='mt-8'>
+                        <label className='font-semibold'>Email</label>
+                        <input
+                            placeholder='Enter your email'
+                            className='mt-2 w-full p-2 border border-secondary rounded-md focus:outline-0 ring-0 bg-white'
+                            type="email"
+                        />
+                    </div>
+
+                    {/* Send OTP */}
+                    <div className='mt-6'>
+                        <Link href="/verify-otp">
+                            <button className='cursor-pointer w-full p-2 bg-secondary font-semibold text-white rounded-md'>
+                                Send OTP
+                            </button>
+                        </Link>
+                    </div>
+
+                    {/* Back to Login */}
+                    <p className='text-center mt-5 text-gray-600'>
+                        Remember your password?
+                        <Link href="/login" className='text-secondary font-semibold ml-1'>
+                            Login
+                        </Link>
+                    </p>
+
                 </div>
             </div>
-        </div >
+
+            {/* Right Side Image */}
+            <img
+                className='lg:block hidden'
+                src="/Images/Auth/auth_image.png"
+                alt="auth"
+            />
+        </div>
     );
-}
+};
 
 export default Page;

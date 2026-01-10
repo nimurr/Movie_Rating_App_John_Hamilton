@@ -1,76 +1,101 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { FcGoogle } from 'react-icons/fc';
+import { FaFacebook } from 'react-icons/fa';
 
 const Page = () => {
-    // State to toggle password visibility
     const [showPassword, setShowPassword] = useState(false);
 
-    // Function to toggle password visibility
-    const togglePassword = () => {
-        setShowPassword(prevState => !prevState);
-    };
-
     return (
-        <div className='h-screen bg-gradient-to-b from-[#f9f5ff] to-[#b6a7ca]'>
-            <Link href="/">
-                <img className='md:pl-10 pt-10  md:w-60 w-48 mx-auto md:ml-0' src="/Images/Auth/logo2.png" alt="" />
-            </Link>
-            <div className='flex justify-center mt-20'>
-                <div className='min-w-80'>
-                    <h2 className='text-3xl font-medium text-center'>Sign Up</h2>
-                    <div className='mt-5'>
-                        <label className='font-semibold' htmlFor="name">Full Name</label>
+        <div className='h-screen overflow-y-auto grid lg:grid-cols-2 bg-[#1a3248] text-white'>
+
+            {/* Left Side */}
+            <div className='flex justify-center items-center mt-20'>
+                <div className='md:min-w-[500px] min-w-full md:px-0 px-5'>
+
+                    {/* Logo & Title */}
+                    <div>
+                        <img src="/Images/Auth/logo.png" alt="logo" />
+                        <p className='mt-2'>Create your account</p>
+                    </div>
+
+                    {/* Full Name */}
+                    <div className='mt-8'>
+                        <label className='font-semibold'>Full Name</label>
                         <input
-                            placeholder='Enter your name'
-                            className='mt-2 w-full p-2 border border-green-400 rounded-md focus:outline-0 ring-0 bg-white'
+                            placeholder='Enter your full name'
+                            className='mt-2 w-full p-2 border border-secondary rounded-md focus:outline-0 ring-0 bg-white'
                             type="text"
-                            name="name"
-                            id="name"
                         />
                     </div>
+
+                    {/* Email */}
                     <div className='mt-5'>
-                        <label className='font-semibold' htmlFor="email">Email</label>
+                        <label className='font-semibold'>Email</label>
                         <input
                             placeholder='Enter your email'
-                            className='mt-2 w-full p-2 border border-green-400 rounded-md focus:outline-0 ring-0 bg-white'
+                            className='mt-2 w-full p-2 border border-secondary rounded-md focus:outline-0 ring-0 bg-white'
                             type="email"
-                            name="email"
-                            id="email"
                         />
                     </div>
+
+                    {/* Password */}
                     <div className='mt-5'>
-                        <label className='font-semibold' htmlFor="password">Password</label>
+                        <label className='font-semibold'>Password</label>
                         <div className='relative'>
                             <input
                                 placeholder='Enter your password'
-                                className='mt-2 w-full p-2 border border-green-400 rounded-md focus:outline-0 ring-0 bg-white'
-                                type={showPassword ? "text" : "password"} // Toggle password visibility
-                                name="password"
-                                id="password"
+                                className='mt-2 w-full p-2 border border-secondary rounded-md focus:outline-0 ring-0 bg-white'
+                                type={showPassword ? 'text' : 'password'}
                             />
-                            {/* Show/Hide Password Icon */}
                             <button
                                 type="button"
-                                onClick={togglePassword}
-                                className='absolute cursor-pointer right-3 top-[30px] transform -translate-y-1/2 text-gray-500'
+                                onClick={() => setShowPassword(!showPassword)}
+                                className='absolute right-3 top-[30px] -translate-y-1/2 text-gray-500'
                             >
-                                {!showPassword ? '🙈' : '👁️'}
+                                {showPassword ? <FiEyeOff /> : <FiEye />}
                             </button>
                         </div>
                     </div>
-                    <div className='flex justify-between items-center my-5'>
-                        <label className='' htmlFor="remember">
-                            <input className='' type="checkbox" name="remember" id="remember" />
-                            <span className='ml-2 text-gray-600'>I agree to all terms & conditions.</span>
+
+                    {/* Terms */}
+                    <div className='flex items-center my-5'>
+                        <input type="checkbox" id="terms" />
+                        <label htmlFor="terms" className='ml-2 text-gray-600'>
+                            I agree to all terms & conditions
                         </label>
                     </div>
+
+                    {/* Signup Button */}
                     <div className='mt-5'>
-                        <button className='cursor-pointer w-full p-2 bg-green-400 font-semibold text-white rounded-md'>Sign In</button>
+                        <button className='cursor-pointer w-full p-2 bg-secondary font-semibold text-white rounded-md'>
+                            Sign Up
+                        </button>
                     </div>
-                    <p className='text-center mt-5 text-gray-600'>Already have an account? <Link className='text-blue-600' href="/login" >Login</Link></p>
+
+                    <div className='flex flex-wrap lg:flex-nowrap items-center gap-2'>
+                        <div className='mt-5 w-full'>
+                            <button className='cursor-pointer flex items-center justify-center gap-2 w-full p-2  border border-white font-semibold text-white rounded-md'><FcGoogle /> Google</button>
+                        </div>
+                        <div className='mt-5 w-full'>
+                            <button className='cursor-pointer flex items-center justify-center gap-2 w-full p-2  border border-white font-semibold text-white rounded-md'><FaFacebook className='text-blue-500' /> Facebook</button>
+                        </div>
+                    </div>
+
+                    {/* Login Link */}
+                    <p className='text-center mt-5 text-gray-600'>
+                        Already have an account?
+                        <Link className='text-secondary font-semibold ml-1' href="/login">
+                            Login
+                        </Link>
+                    </p>
                 </div>
             </div>
+
+            {/* Right Image */}
+            <img className='lg:block hidden' src="/Images/Auth/auth_image.png" alt="auth" />
         </div>
     );
 };
