@@ -32,7 +32,7 @@ const Page = () => {
                 <div className="xl:col-span-3 ">
                     <div className="mb-6 flex relative items-center justify-between">
 
-                        <img className="max-w-60" src="/Images/Movies/followers.png" alt="" />
+                        <img className="max-w-60" src="/Images/Movies/following.png" alt="" />
 
                         {searchOpen && (
                             <input
