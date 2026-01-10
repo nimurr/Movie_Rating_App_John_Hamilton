@@ -12,7 +12,6 @@ const Page = () => {
             <UpcomingForWatchlist />
             <YourWatchlist />
             <YourFavorites />
-
         </div>
     );
 };
