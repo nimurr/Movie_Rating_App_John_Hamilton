@@ -50,7 +50,7 @@ const Page = () => {
                                 className='absolute cursor-pointer right-3 top-[30px] transform -translate-y-1/2 text-gray-500'
                             >
                                 {!showPassword ? '🙈' : '👁️'}
-                            </button>
+                            </button> 
                         </div>
                     </div>
                     <div className='flex justify-between items-center my-5'>
