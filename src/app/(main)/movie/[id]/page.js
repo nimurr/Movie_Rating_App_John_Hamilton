@@ -17,7 +17,7 @@ import { useGetMovieQuery } from '@/redux/fetures/movies/movies';
 
 const Page = ({ params }) => {
     const { id } = params;
-    const { data } = useGetMovieQuery(id);
+    const { data , isLoading } = useGetMovieQuery(id);
     const movieDetails = data?.data?.attributes;
     console.log(movieDetails)
 
@@ -40,6 +40,9 @@ const Page = ({ params }) => {
 
     return (
         <div>
+            {
+                isLoading && <p className='text-center text-xl text-red-600 py-32'>Loading...</p>
+            }
             {/* Hero Section */}
             <div style={{ backgroundImage: `url(${movieDetails?.banner})` }} className={`bg-cover flex items-center justify-center w-full min-h-[80vh] object-cover  bg-no-repeat h-full xl:px-0 px-5 py-10 relative`}>
 
