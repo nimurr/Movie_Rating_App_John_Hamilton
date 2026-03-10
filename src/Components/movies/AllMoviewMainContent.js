@@ -19,7 +19,7 @@ const AllMoviewMainContent = ({ movies, isLoading }) => {
                     movies?.map((item) => (
                         <Link href={`/movie/${item?.id}`} key={item} className='text-white relative bg-[#1a3248] rounded-lg overflow-hidden'>
                             <img className='w-full max-h-60 object-cover' src={item?.poster} alt="" />
-                            <div className='absolute border-2 border-red-500 w-10 h-10 flex items-center justify-center rounded-full top-48 right-2 bg-red-500'>
+                            <div className={`absolute w-10 h-10 flex items-center justify-center rounded-full top-48 right-2 ${item?.rating < 7 ? 'bg-red-600' : 'bg-green-600'}`}>
                                 <span>{item?.rating.toFixed(1)}</span>
                             </div>
                             <div className='p-3'>
