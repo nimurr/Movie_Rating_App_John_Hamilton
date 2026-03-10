@@ -41,8 +41,9 @@ const Page = ({ params }) => {
     return (
         <div>
             {/* Hero Section */}
-            <div style={{ backgroundImage: `url(${movieDetails?.banner})` }} className={`bg-cover flex items-center justify-center w-full min-h-[80vh] object-cover  bg-no-repeat h-full xl:px-0 px-5 py-10`}>
-                <div className="absolute inset-0 bg-black/50" />
+            <div style={{ backgroundImage: `url(${movieDetails?.banner})` }} className={`bg-cover flex items-center justify-center w-full min-h-[80vh] object-cover  bg-no-repeat h-full xl:px-0 px-5 py-10 relative`}>
+
+                <div className="absolute inset-0 bg-black/50  " />
 
                 <div className="max-w-7xl z-10 mx-auto w-full flex xl:flex-row flex-col items-center gap-5 lg:pt-0 pt-20">
                     <img className='max-w-48 lg:max-w-60 rounded' src={movieDetails?.poster} alt="" />

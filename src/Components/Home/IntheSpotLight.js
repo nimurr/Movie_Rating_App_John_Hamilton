@@ -8,7 +8,7 @@ const IntheSpotLight = () => {
     const { data, isLoading } = useGetMoviesQuery();
     const movies = data?.data?.attributes;
 
-      const convertMinutesToHours = (minutes) => {
+    const convertMinutesToHours = (minutes) => {
         if (!minutes) return "N/A";
         const hrs = Math.floor(minutes / 60);
         const mins = minutes % 60;
