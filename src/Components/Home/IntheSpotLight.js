@@ -1,8 +1,19 @@
+import { useGetMoviesQuery } from '@/redux/fetures/movies/movies';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 const IntheSpotLight = () => {
+
+    const { data, isLoading } = useGetMoviesQuery();
+    const movies = data?.data?.attributes;
+
+      const convertMinutesToHours = (minutes) => {
+        if (!minutes) return "N/A";
+        const hrs = Math.floor(minutes / 60);
+        const mins = minutes % 60;
+        return `${hrs}h ${mins}m`;
+    };
 
     const buttons = [
         'Animation', 'Slice of Life', 'Fiction', 'Heros', 'Comedy', 'Romance',
@@ -94,18 +105,18 @@ const IntheSpotLight = () => {
             {/* items all here after click button item */}
             <div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5'>
                 {
-                    [...Array(20)].map((item) => (
-                        <Link href={`/movie/1`} key={item} className='text-white relative bg-[#1a3248] rounded-lg overflow-hidden'>
-                            <img className='w-full max-h-60 object-cover' src="https://i.ibb.co.com/8nSPBNBD/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547-screen.jpg" alt="" />
-                            <div className='absolute top-52 right-5'>
-                                <span>8.5</span>
+                    movies?.map((item) => (
+                        <Link href={`/movie/${item?.id}`} key={item} className='text-white relative bg-[#1a3248] rounded-lg overflow-hidden'>
+                            <img className='w-full max-h-60 object-cover' src={item?.poster} alt="" />
+                            <div className='absolute border-2 border-red-500 w-10 h-10 flex items-center justify-center rounded-full top-48 right-2 bg-red-500'>
+                                <span>{item?.rating.toFixed(1)}</span>
                             </div>
                             <div className='p-3'>
-                                <h2 className='my-3 font-semibold'>Spider-Man: Across the Spider-Verse</h2>
-                                <ul className='list-disc text-xs flex items-center gap-5'>
+                                <h2 className='my-3 font-semibold'>{item?.overview.length > 70 ? item?.overview.slice(0, 70) + '...' : item?.overview}</h2>
+                                <ul className='list-disc text-xs flex items-center flex-wrap gap-3'>
                                     <li className='ml-3'>Movie</li>
-                                    <li className='ml-3'>2018</li>
-                                    <li className='ml-3'>2hr 30min</li>
+                                    <li className='ml-3'>{item?.release_date}</li>
+                                    <li className='ml-3'>{convertMinutesToHours(item?.runtime)}</li>
                                 </ul>
                             </div>
                         </Link>

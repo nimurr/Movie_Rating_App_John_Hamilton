@@ -8,6 +8,7 @@ const genres = [
 ];
 
 const AllMoviewSidebar = () => {
+     
     const [rating, setRating] = useState(5);
 
     return (

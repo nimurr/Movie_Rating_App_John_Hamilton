@@ -1,10 +1,16 @@
 'use client';
 import AllMoviewMainContent from '@/Components/movies/AllMoviewMainContent';
 import AllMoviewSidebar from '@/Components/movies/AllMoviewSidebar';
+import { useGetMoviesQuery } from '@/redux/fetures/movies/movies';
 import React, { useState } from 'react';
 import { IoClose } from "react-icons/io5";
 
 const Page = () => {
+
+    const { data , isLoading } = useGetMoviesQuery();
+    const movies = data?.data?.attributes;
+
+
     const [modalOpen, setModalOpen] = useState(true);
     const [modalImage, setModalImage] = useState('');
 
@@ -19,13 +25,13 @@ const Page = () => {
             <div className="max-w-7xl mx-auto px-4 md:px-0 py-10 md:py-20 grid grid-cols-4 gap-5">
                 {/* Sidebar */}
                 <div className='col-span-1 w-full'>
-                    <AllMoviewSidebar />
+                    <AllMoviewSidebar movies={movies} />
                 </div>
 
                 {/* Main content */}
                 <div className='col-span-3'>
                     {/* Pass openModal to your main content if you want clicking images to open modal */}
-                    <AllMoviewMainContent openModal={openModal} />
+                    <AllMoviewMainContent isLoading={isLoading} movies={movies} openModal={openModal} />
                 </div>
 
                 {/* Modal */}
