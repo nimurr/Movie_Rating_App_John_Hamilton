@@ -17,7 +17,7 @@ import { useGetMovieQuery } from '@/redux/fetures/movies/movies';
 
 const Page = ({ params }) => {
     const { id } = params;
-    const { data , isLoading } = useGetMovieQuery(id);
+    const { data, isLoading } = useGetMovieQuery(id);
     const movieDetails = data?.data?.attributes;
     console.log(movieDetails)
 
